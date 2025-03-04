@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Royale Hotel</title>
     <style>
-        /* Basic Styling */
-        * {
+        body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -18,23 +17,56 @@
             color: white;
             padding: 15px;
             text-align: center;
+            font-size: 24px;
+            font-weight: bold;
         }
 
+        /* Navigation */
         nav {
             background-color: #34495e;
-            text-align: center;
             padding: 10px;
+            text-align: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             padding: 10px 15px;
+            margin: 0 5px;
             display: inline-block;
         }
 
         nav a:hover {
             background-color: #f39c12;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            min-width: 150px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f39c12;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Hero Section */
@@ -69,53 +101,54 @@
             background: #e67e22;
         }
 
-        /* Hotel Image */
-        .hotel-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-        }
-
         /* Footer */
         footer {
             background-color: #2c3e50;
             color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .owner {
+            font-weight: bold;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>✨ Grand Royale Hotel ✨</h1>
+        ✨ Grand Royale Hotel ✨
     </header>
 
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="rooms.html">Rooms</a>
-        <a href="services.html">Services</a>
-        <a href="booking.html">Booking</a>
-        <a href="login.html">Login</a>
+        
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <a href="#">More ▼</a>
+            <div class="dropdown-content">
+                <a href="rooms.html">Rooms</a>
+                <a href="services.html">Services</a>
+                <a href="booking.html">Booking</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
     </nav>
 
     <section class="hero">
         <h2>Experience Comfort & Luxury</h2>
         <p>Welcome to <b>Grand Royale Hotel</b>. Book your perfect stay now and enjoy world-class hospitality.</p>
         <a href="booking.html" class="btn">Book Now</a>
-
-        <!-- Online Hotel Image -->
-        <img src="https://source.unsplash.com/800x400/?hotel,resort" alt="Luxury Hotel" class="hotel-image">
     </section>
 
     <footer>
         <p>&copy; 2025 Grand Royale Hotel. All rights reserved.</p>
+        <p class="owner">Owner: Butt.99</p>
     </footer>
 
 </body>
