@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grand Royale Hotel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <header class="bg-gray-800 text-white text-center py-4 text-2xl font-bold">
+    ✨ Grand Royale Hotel ✨
+  </header>
+
+  <nav class="bg-gray-700 text-white flex flex-wrap justify-center gap-2 py-3 text-sm md:text-base">
+    <a onclick="showSection('home')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">🏠 Home</a>
+    <a onclick="showSection('about')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">📖 About</a>
+    <a onclick="showSection('contact')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">📞 Contact</a>
+    <a onclick="showSection('rooms')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">🛏️ Rooms</a>
+    <a onclick="showSection('services')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">🛎️ Services</a>
+    <a onclick="showSection('booking')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">📅 Booking</a>
+    <a onclick="showSection('offers')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">🔥 Offers</a>
+    <a onclick="showSection('login')" class="hover:bg-yellow-500 px-3 py-1 rounded cursor-pointer">🔐 Login</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="section text-center p-6 hidden">
+    <h2 class="text-2xl font-bold mb-2">🏨 Welcome to Grand Royale Hotel</h2>
+    <p>Enjoy world-class hospitality at the most luxurious hotel in town.</p>
+    <div class="text-gray-600 mt-2">📍 Location: Islamabad, Pakistan</div>
+    <button onclick="showSection('booking')" class="mt-4 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded">
+      📅 Book Now
+    </button>
+  </section>
+
+  <section id="rooms" class="section p-6 hidden">
+    <h2 class="text-2xl font-bold text-center mb-6">🛏️ Our Rooms</h2>
+
+    <div class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-4 mb-4">
+      <h3 class="text-lg font-bold">🏨 Deluxe Room</h3>
+      <p>Luxurious stay with a king-sized bed, WiFi, minibar, and a beautiful city view.</p>
+    </div>
+
+    <div class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-4 mb-4">
+      <h3 class="text-lg font-bold">🏡 Family Suite</h3>
+      <p>Spacious suite with 2 bedrooms, a kitchenette, and a garden view.</p>
+    </div>
+
+    <div class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-4">
+      <h3 class="text-lg font-bold">🌊 Sea View Room</h3>
+      <p>Premium room with a breathtaking sea view, balcony, and complimentary breakfast.</p>
+    </div>
+  </section>
+
+  <section id="services" class="section text-center p-6 hidden">
+    <h2 class="text-2xl font-bold mb-4">🛎️ Our Services</h2>
+    <p>✔️ 24/7 Room Service</p>
+    <p>✔️ Free WiFi</p>
+    <p>✔️ Swimming Pool</p>
+    <p>✔️ Airport Pickup</p>
+    <p>✔️ Luxury Dining</p>
+  </section>
+
+  <section id="booking" class="section p-6 hidden">
+    <h2 class="text-2xl font-bold text-center mb-4">📅 Book Your Stay</h2>
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+      <label class="block font-bold">Full Name:</label>
+      <input type="text" placeholder="Enter your name" class="w-full border p-2 rounded mt-1 mb-2"/>
+
+      <label class="block font-bold">Email:</label>
+      <input type="email" placeholder="Enter your email" class="w-full border p-2 rounded mt-1 mb-2"/>
+
+      <label class="block font-bold">Check-in Date:</label>
+      <input type="date" class="w-full border p-2 rounded mt-1 mb-2"/>
+
+      <label class="block font-bold">Check-out Date:</label>
+      <input type="date" class="w-full border p-2 rounded mt-1 mb-2"/>
+
+      <label class="block font-bold">Select Room Type:</label>
+      <select class="w-full border p-2 rounded mt-1 mb-4">
+        <option>🏨 Deluxe Room</option>
+        <option>🏡 Family Suite</option>
+        <option>🌊 Sea View Room</option>
+      </select>
+
+      <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded w-full">Confirm Booking ✅</button>
+    </div>
+  </section>
+
+  <section id="offers" class="section text-center p-6 hidden">
+    <h2 class="text-2xl font-bold mb-4">🔥 Special Offers</h2>
+    <p>🎉 Book 3 nights & get 1 night FREE!</p>
+    <p>🎊 20% discount for early bookings.</p>
+    <p>💎 VIP members get exclusive lounge access.</p>
+  </section>
+
+  <section id="login" class="section text-center p-6 hidden">
+    <h2 class="text-2xl font-bold mb-4">🔐 Login</h2>
+    <input type="text" placeholder="Enter Email" class="w-full max-w-xs border p-2 rounded mb-2"/>
+    <input type="password" placeholder="Enter Password" class="w-full max-w-xs border p-2 rounded mb-4"/>
+    <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded">Login</button>
+  </section>
+
+  <footer class="bg-gray-800 text-white text-center py-4 mt-6 text-sm">
+    <p>&copy; 2025 Grand Royale Hotel. All rights reserved.</p>
+    <p>📞 Contact: +923230772853 | 📧 Email: fazalbutt332@gmail.com</p>
+    <p><strong>Owner: Butt.99</strong></p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+    showSection('home');
+  </script>
+
+</body>
+</html>
