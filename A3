@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grand Royale Luxury Hotel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .gold {
+      color: #d4af37;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen">
+
+  <!-- Header -->
+  <header class="text-center text-4xl font-bold py-6 bg-gray-900 border-b border-gray-700 shadow-xl gold">
+    ✨ Grand Royale Luxury Hotel ✨
+  </header>
+
+  <!-- Navigation -->
+  <nav class="flex flex-wrap justify-center gap-4 p-4 bg-gray-800 text-white font-semibold text-sm sticky top-0 z-50">
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('rooms')">Rooms</button>
+    <button onclick="showSection('services')">Services</button>
+    <button onclick="showSection('booking')">Booking</button>
+    <button onclick="showSection('offers')">Offers</button>
+    <button onclick="showSection('contact')">Contact</button>
+    <button onclick="showSection('login')">Login</button>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="section text-center p-10">
+    <h2 class="text-3xl font-bold gold mb-4">Welcome to Luxury</h2>
+    <p class="text-lg">Experience 7-star hospitality with royal comfort & stunning ambiance.</p>
+    <button onclick="scrollToBooking()" class="mt-5 bg-yellow-400 hover:bg-yellow-500 text-black px-5 py-2 rounded-full font-bold transition">Book Now</button>
+  </section>
+
+  <section id="about" class="section hidden p-10 text-center">
+    <h2 class="text-2xl font-bold mb-3 gold">About Us</h2>
+    <p class="text-gray-300">At Grand Royale, we redefine luxury. Since 1999, our goal is perfection.</p>
+  </section>
+
+  <section id="rooms" class="section hidden p-10">
+    <h2 class="text-2xl font-bold gold text-center mb-5">Our Rooms</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-bold">Presidential Suite</h3>
+        <p>Private pool, chef, ocean view</p>
+      </div>
+      <div class="glass p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-bold">Royal Deluxe</h3>
+        <p>Gold interiors, skyline view, spa access</p>
+      </div>
+      <div class="glass p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-bold">Elite Family Room</h3>
+        <p>2 king beds, entertainment zone, smart automation</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section hidden text-center p-10">
+    <h2 class="text-2xl font-bold gold mb-3">Our Services</h2>
+    <ul class="space-y-2 text-gray-300">
+      <li>24/7 Butler Service</li>
+      <li>Private Chauffeur</li>
+      <li>Luxury Spa & Sauna</li>
+      <li>Helicopter Transfers</li>
+      <li>Personal Shopping Assistant</li>
+    </ul>
+  </section>
+
+  <section id="booking" class="section hidden p-10 max-w-xl mx-auto">
+    <h2 class="text-2xl font-bold text-center mb-6 gold">Book Your Stay</h2>
+    <form class="space-y-4">
+      <input type="text" id="name" placeholder="Full Name" class="w-full px-4 py-2 rounded bg-white text-black" />
+      <input type="email" id="email" placeholder="Email" class="w-full px-4 py-2 rounded bg-white text-black" />
+      <input type="date" id="checkin" class="w-full px-4 py-2 rounded bg-white text-black" />
+      <input type="date" id="checkout" class="w-full px-4 py-2 rounded bg-white text-black" />
+      <select id="roomType" class="w-full px-4 py-2 rounded bg-white text-black">
+        <option>Presidential Suite</option>
+        <option>Royal Deluxe</option>
+        <option>Elite Family Room</option>
+      </select>
+      <button type="button" onclick="confirmBooking()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-2 font-bold rounded transition">Confirm Booking</button>
+    </form>
+  </section>
+
+  <section id="offers" class="section hidden text-center p-10">
+    <h2 class="text-2xl font-bold mb-4 gold">Special Offers</h2>
+    <p>✨ Stay 4 nights, get 1 FREE</p>
+    <p>✨ 30% discount for honeymooners</p>
+    <p>✨ VIP lounge + airport pickup</p>
+  </section>
+
+  <section id="contact" class="section hidden text-center p-10">
+    <h2 class="text-2xl font-bold gold mb-2">Contact Us</h2>
+    <p>Email: info@grandroyale.com</p>
+    <p>Phone: +92 323 0772853</p>
+  </section>
+
+  <section id="login" class="section hidden text-center p-10">
+    <h2 class="text-2xl font-bold gold mb-4">Login</h2>
+    <input type="text" placeholder="Email" class="mb-2 px-4 py-2 rounded bg-white text-black w-64"/><br/>
+    <input type="password" placeholder="Password" class="mb-4 px-4 py-2 rounded bg-white text-black w-64"/><br/>
+    <button class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-full font-bold">Login</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center bg-gray-900 text-white p-4 mt-10 border-t border-gray-700">
+    <p>&copy; 2025 Grand Royale Hotel. Designed by <span class="gold font-semibold">Butt.99</span></p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+    function showSection(id) {
+      sections.forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function scrollToBooking() {
+      showSection('booking');
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function confirmBooking() {
+      const name = document.getElementById('name').value;
+      if (!name) {
+        alert("Please enter your name.");
+        return;
+      }
+      alert("Thanks " + name + "! Your booking has been confirmed.");
+    }
+
+    function greetUser() {
+      const hour = new Date().getHours();
+      let greet = "Welcome";
+      if (hour < 12) greet = "Good Morning";
+      else if (hour < 18) greet = "Good Afternoon";
+      else greet = "Good Evening";
+      alert(greet + ", welcome to Grand Royale!");
+    }
+
+    function validateEmail() {
+      const email = document.getElementById('email').value;
+      if (!email.includes('@')) alert('Invalid email format!');
+    }
+
+    function showOffersIfWeekend() {
+      const today = new Date().getDay();
+      if (today === 6 || today === 0) showSection('offers');
+    }
+
+    function prefillLogin() {
+      document.querySelector('#login input[type=text]').value = "guest@example.com";
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('bg-black');
+      document.body.classList.toggle('bg-white');
+    }
+
+    function animateButton(btn) {
+      btn.classList.add('scale-110');
+      setTimeout(() => btn.classList.remove('scale-110'), 200);
+    }
+
+    // Init
+    showSection('home');
+    greetUser();
+    showOffersIfWeekend();
+  </script>
+
+</body>
+</html>
